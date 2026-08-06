@@ -1,4 +1,4 @@
-chrome.commands.onCommand.addListener((command) => {
+chrome.commands.onCommand.addListener(async (command) => {
     switch (command) {
         case "tab-next":
             tab('next');
@@ -10,14 +10,16 @@ chrome.commands.onCommand.addListener((command) => {
     }
 });
 
-async function tab(direction='next') {
+/*
+    Active next or previous tab.
+*/
+
+async function tab(direction = 'next') {
     const tabs      = await chrome.tabs.query({});
     const activeTab = tabs.find(t => t.active);
 
     if (activeTab == null || tabs.length == 1)
         return;
-
-    const offset = direction === 'next' ? -1 : 1;
 
     const prevTab = 
            tabs.find(t => t.index === activeTab.index - 1)
