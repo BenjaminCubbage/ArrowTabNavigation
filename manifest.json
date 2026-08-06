@@ -1,0 +1,22 @@
+{
+    "name": "Arrow Tab Navigation",
+    "description": "Navigate Chrome Tabs with Ctrl+Arrow",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "service-worker.js"
+    },
+    "action": {
+        "default_popup": "panel.html"
+    },
+    "commands": {
+        "tab-next": {
+            "suggested_key": "Ctrl+Right",
+            "description": "Tab Next"
+        },
+        "tab-previous": {
+            "suggested_key": "Ctrl+Left",
+            "description": "Tab Previous"
+        }
+    }
+}
