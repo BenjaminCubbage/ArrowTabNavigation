@@ -1,6 +1,6 @@
 {
     "name": "Arrow Tab Navigation",
-    "description": "Navigate Chrome Tabs with Ctrl+Arrow",
+    "description": "Navigate tabs using Ctrl+Up and Ctrl+Down",
     "version": "1.0",
     "manifest_version": 3,
     "permissions": [ "scripting", "activeTab" ],
