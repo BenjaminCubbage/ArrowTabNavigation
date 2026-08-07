@@ -7,6 +7,9 @@
     "background": {
         "service_worker": "service-worker.js"
     },
+    "action": {
+        "default_title": "Toggle"
+    },
     "commands": {
         "tab-next": {
             "suggested_key": "Ctrl+Up",
