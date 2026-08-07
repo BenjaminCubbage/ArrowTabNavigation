@@ -1,3 +1,7 @@
+/*
+    Bound state.
+*/
+
 const state = new (class {
     #enabled;
 
@@ -26,6 +30,10 @@ const state = new (class {
     }
 })();
 
+/*
+    Event handlers.
+*/
+
 chrome.action.onClicked.addListener(async (command) => {
     state.toggleEnabled();
 });
@@ -50,7 +58,10 @@ chrome.commands.onCommand.addListener(async (command) => {
 */
 
 async function tab(direction = 'next') {
-    const tabs      = await chrome.tabs.query({});
+    const tabs = await chrome.tabs.query({
+        lastFocusedWindow: true
+    });
+
     const activeTab = tabs.find(t => t.active);
 
     if (activeTab == null || tabs.length == 1)
