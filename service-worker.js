@@ -21,7 +21,7 @@ const state = new (class {
         });
 
         chrome.action.setBadgeBackgroundColor({
-            color: this.#enabled ? 'green' : 'crimson'
+            color: this.#enabled ? 'green' : 'firebrick'
         });
     }
 })();
